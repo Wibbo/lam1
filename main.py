@@ -1,9 +1,7 @@
 import postcodes_io_api
+from location import location
 
-api  = postcodes_io_api.Api(debug_http=True)
-data = api.get_postcode('SW112EF')
-
-print(data['result']['postcode'])
+location_data = location('SW112EF')
 
 
 
