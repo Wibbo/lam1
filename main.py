@@ -3,8 +3,6 @@ import xlwings as xw
 from location import location
 from datetime import date
 
-# location_data = location('SW112EF')
-
 def calculate_age(born):
     today = date.today()
     return today.year - born.year - ((today.month, today.day) < (born.month, born.day))
@@ -34,15 +32,16 @@ age_col = 11
 while True:
     postcode = sht.range(row_number, postcode_col).value
     date_birth = sht.range(row_number, DoB_col).value
+    
+    if postcode != None:
+        location_data = location(postcode)
     sht.range(row_number, age_col).value = calculate_age(date_birth)
     row_number += 1
-
-
 
     if postcode == None:
         break
 
-    print(postcode, date_birth)
+    #print(postcode, date_birth)
 
 
 
