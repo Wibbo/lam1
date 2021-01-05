@@ -17,7 +17,7 @@ class location:
         self.lsoa = data['result']['lsoa'] 
         self.msoa = data['result']['msoa'] 
         self.parliamentary_constituency = data['result']['parliamentary_constituency'] 
-        self.ward = data['result']['ward'] 
+        self.ward = data['result']['admin_ward'] 
         self.parish = data['result']['parish'] 
         self.country = data['result']['country']       
         self.ccg = data['result']['ccg']   
